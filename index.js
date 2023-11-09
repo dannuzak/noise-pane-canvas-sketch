@@ -1,8 +1,14 @@
+require = require("esm")(module);
 const canvasSketch = require('canvas-sketch');
 const random = require('canvas-sketch-util/random');
 const math = require('canvas-sketch-util/math')
-const Tweakpane = require('tweakpane')
 
+let Tweakpane;
+
+import('tweakpane').then(module => {
+    Tweakpane = module.default;
+    // rest of your code that uses Tweakpane...
+});
 const settings = {
     dimensions: [1080, 1080],
     animate: true
